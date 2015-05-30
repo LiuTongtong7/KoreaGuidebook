@@ -1,5 +1,5 @@
 /**
- * Created by liutongtong on 5/30/15.
+ * Created by maoyilin, liutongtong on 5/30/15.
  */
 
 $(document).ready(function () {
