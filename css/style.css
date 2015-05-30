@@ -1,3 +1,14 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    opacity: 0;
+    -webkit-transition: opacity 1s ease;
+    transition: opacity 1s ease;
+}
+
 .archives {
     height: 100%;
 }
@@ -51,9 +62,6 @@ html.desktop .archive-container:before {
     background-position: center center;
     -webkit-transition: -webkit-transform .5s cubic-bezier(.5,0,.25,1);
     transition: transform .5s cubic-bezier(.5,0,.25,1);
-    opacity: 0;
-    -webkit-transition: opacity .75s ease;
-    transition: opacity .75s ease;
 }
 
 .archive-text {

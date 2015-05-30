@@ -6,7 +6,7 @@ $(function() {
     var _archive_image = $(".archive-image");
     var total = _archive_image.length;
     var count = 0;
-    _archive_image.each(function(i) {
+    _archive_image.each(function() {
         var _this = $(this);
         var img = new Image();
         img.src = _this.attr("data-img");
@@ -15,7 +15,7 @@ $(function() {
             $(this).remove();
             count += 1;
             if (count == total) {
-                _archive_image.css("opacity", 1);
+                $("body").css("opacity", 1);
             }
         })
     });
