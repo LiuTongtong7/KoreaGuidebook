@@ -2,7 +2,7 @@
  * Created by liutongtong on 5/30/15.
  */
 
-$(function() {
+$(document).ready(function() {
     var _archive_image = $(".archive-image");
     var total = _archive_image.length;
     var count = 0;
