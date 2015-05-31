@@ -105,7 +105,26 @@ var index_disappear = function(callback) {
 };
 
 var enable_archive_click = function() {
-    if (window.location.href.indexOf("index.html") >= 0) {
+    if (window.location.href.indexOf("life.html") >= 0) {
+        $(".food-container").bind("click", function() {
+            var redirect_url = function() {
+                window.location.href = "../archives/food.html";
+            };
+            index_disappear(redirect_url);
+        });
+        $(".shopping-container").bind("click", function() {
+            var redirect_politics = function() {
+                window.location.href = "../archives/shopping.html";
+            };
+            index_disappear(redirect_politics);
+        });
+        $(".traffic-container").bind("click", function() {
+            var redirect_url = function() {
+                window.location.href = "../archives/traffic.html";
+            };
+            index_disappear(redirect_url);
+        });
+    } else {
         $(".politics-container").bind("click", function() {
             var redirect_url = function() {
                 window.location.href = "archives/politics.html";
@@ -133,25 +152,6 @@ var enable_archive_click = function() {
         $(".korean-container").bind("click", function() {
             var redirect_url = function() {
                 window.location.href = "archives/korean.html";
-            };
-            index_disappear(redirect_url);
-        });
-    } else {
-        $(".food-container").bind("click", function() {
-            var redirect_url = function() {
-                window.location.href = "../archives/food.html";
-            };
-            index_disappear(redirect_url);
-        });
-        $(".shopping-container").bind("click", function() {
-            var redirect_politics = function() {
-                window.location.href = "../archives/shopping.html";
-            };
-            index_disappear(redirect_politics);
-        });
-        $(".traffic-container").bind("click", function() {
-            var redirect_url = function() {
-                window.location.href = "../archives/traffic.html";
             };
             index_disappear(redirect_url);
         });
