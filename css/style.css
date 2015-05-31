@@ -367,7 +367,8 @@ html.desktop .archive-button {
 
 @media (max-width: 767px) {
     .slice-container {
-        padding: 50px 0;
+        /*padding: 50px 0;*/
+        padding: 0;
         box-sizing: content-box;
         min-height: 100vmin;
         -webkit-transform-style: preserve-3d;
