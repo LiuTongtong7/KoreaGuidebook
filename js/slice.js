@@ -11,7 +11,7 @@ var set_slice_height = function() {
 var scroll_to_slice = function() {
     var current_offset = $(window).scrollTop();
     var origin_offset = $(".slice-container:eq("+active_slice+")").offset().top;
-    var max_offset = 10;
+    var max_offset = 20;
     if (current_offset - origin_offset < -max_offset) {
         switch_slice(active_slice - 1);
     } else if (current_offset - origin_offset > max_offset) {
