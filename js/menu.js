@@ -35,7 +35,8 @@ $(document).ready(function() {
                 return;
             }
             setTimeout(function () {
-                $(".slice-nav").animate({"opacity": 0}, "slow");
+                $(".slice-loading").animate({opacity: 1});
+                $(".slice-nav").animate({"opacity": 0});
                 $(".slice-container").animate({"left": -$(window).width()}, "slow", function() {
                     window.location.href = _this.attr("data-href");
                 });
