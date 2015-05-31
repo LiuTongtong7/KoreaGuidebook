@@ -35,11 +35,18 @@ $(document).ready(function() {
                 return;
             }
             setTimeout(function () {
-                $(".slice-loading").animate({opacity: 1});
-                $(".slice-nav").animate({"opacity": 0});
-                $(".slice-container").animate({"left": -$(window).width()}, "slow", function() {
-                    window.location.href = _this.attr("data-href");
-                });
+                if (window.location.href.indexOf("life.html") >= 0) {
+                    var redirect_url = function() {
+                        window.location.href = _this.attr("data-href");
+                    };
+                    index_disappear(redirect_url);
+                } else {
+                    $(".slice-loading").animate({opacity: 1});
+                    $(".slice-nav").animate({"opacity": 0});
+                    $(".slice-container").animate({"left": -$(window).width()}, "slow", function() {
+                        window.location.href = _this.attr("data-href");
+                    });
+                }
             }, 500);
         });
     });
