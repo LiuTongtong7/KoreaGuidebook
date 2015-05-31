@@ -321,6 +321,60 @@ html.desktop .archive-button {
     transform: rotate(-45deg) translate3d(0,0,0)
 }
 
+.menu-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.menu-nav-item {
+    position: relative;
+    width: calc(100% - 30px);
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+.menu-nav-item-content {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+}
+.menu-nav-item-content img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.menu-nav-item-content a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
 /*Korean.html*/
 .slices {
     position: relative;
