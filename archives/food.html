@@ -10,52 +10,62 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="author" content="Yilin Mao, Tongtong Liu">
     <meta name="description" content="It's an amazing website about Korea.">
-    <title>Life - Amazing Korea</title>
+    <title>Food - Amazing Korea</title>
     <link rel="icon" href="">
     <link rel="apple-touch-icon" href="">
     <link rel="stylesheet" href="../lib/normalize-3.0.2/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div class="archives">
-        <div class="archive-loading"></div>
-        <div class="food-container archive-container">
-            <div class="archive-text-container">
-                <div class="archive-text archive-text-zh">政治</div>
-                <div class="archive-text-spacer"></div>
-                <div class="archive-text archive-text-en">Politics</div>
-                <button class="archive-button">
-                    <span class="archive-button-text">Read more</span>
-                </button>
+    <div class="slices">
+        <div class="slice-loading"></div>
+        <div class="slice-container">
+            <div class="slice-image" data-img="../img/iphone.png"></div>
+            <div class="slice-text-container">
+                <article class="slice-text">
+                    <h1>title</h1>
+                    <p>We worked with Airbnb on making their recently re-designed website responsive. Working closely with the team we created designs and prototypes and helped them create their responsive strategy.</p>
+                </article>
             </div>
-            <!--<div class="archive-image" style="background-image:url(img/messi.jpg)"></div>-->
-            <div class="archive-image" data-img="../img/messi.jpg"></div>
         </div>
-        <div class="shopping-container archive-container">
-            <div class="archive-text-container">
-                <div class="archive-text archive-text-zh">经济</div>
-                <div class="archive-text-spacer"></div>
-                <div class="archive-text archive-text-en">Economics</div>
-                <button class="archive-button">
-                    <span class="archive-button-text">Read more</span>
-                </button>
+        <div class="slice-container">
+            <div class="slice-image" data-img="../img/iphone.png"></div>
+            <div class="slice-text-container">
+                <article class="slice-text">
+                    <h1>title</h1>
+                    <p>We worked with Airbnb on making their recently re-designed website responsive. Working closely with the team we created designs and prototypes and helped them create their responsive strategy.</p>
+                </article>
             </div>
-            <!--<div class="archive-image" style="background-image:url(img/messi.jpg)"></div>-->
-            <div class="archive-image" data-img="../img/messi.jpg"></div>
         </div>
-        <div class="traffic-container archive-container">
-            <div class="archive-text-container">
-                <div class="archive-text archive-text-zh">文化</div>
-                <div class="archive-text-spacer"></div>
-                <div class="archive-text archive-text-en">Culture</div>
-                <button class="archive-button">
-                    <span class="archive-button-text">Read more</span>
-                </button>
+        <div class="slice-container">
+            <div class="slice-image" data-img="../img/iphone.png"></div>
+            <div class="slice-text-container">
+                <article class="slice-text">
+                    <h1>title</h1>
+                    <p>We worked with Airbnb on making their recently re-designed website responsive. Working closely with the team we created designs and prototypes and helped them create their responsive strategy.</p>
+                </article>
             </div>
-            <!--<div class="archive-image" style="background-image:url(img/messi.jpg)"></div>-->
-            <div class="archive-image" data-img="../img/messi.jpg"></div>
+        </div>
+        <div class="slice-container">
+            <div class="slice-image" data-img="../img/iphone.png"></div>
+            <div class="slice-text-container">
+                <article class="slice-text">
+                    <h1>title</h1>
+                    <p>We worked with Airbnb on making their recently re-designed website responsive. Working closely with the team we created designs and prototypes and helped them create their responsive strategy.</p>
+                </article>
+            </div>
         </div>
     </div>
+
+    <nav class="slice-nav">
+        <!-- 根据所处的slice设置nav类别-->
+        <ul class="slice-nav-list">
+            <li class="slice-nav-item slice-nav-item-active" data-id="0"></li>
+            <li class="slice-nav-item" data-id="1"></li>
+            <li class="slice-nav-item" data-id="2"></li>
+            <li class="slice-nav-item" data-id="3"></li>
+        </ul>
+    </nav>
 
     <div class="menu">
         <div class="menu-button">
@@ -107,11 +117,9 @@
         </div>
     </div>
 
-    <!--<script src="//use.typekit.net/gyc4cbi.js"></script>-->
-    <!--<script>try{Typekit.load();}catch(e){}</script>-->
     <script type="text/javascript" src="../lib/jquery-2.1.4/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../js/device.js"></script>
-    <script type="text/javascript" src="../js/loading.js"></script>
+    <script type="text/javascript" src="../js/slice.js"></script>
     <script type="text/javascript" src="../js/menu.js"></script>
 </body>
 </html>

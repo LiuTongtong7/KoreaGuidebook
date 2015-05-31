@@ -13,7 +13,7 @@ var load_images = function(min_millisecond, callback) {
         var height = $(this).css("height");
         var window_width = $(window).width();
         var css_effect;
-        if (index % 2 == 0) {
+        if (index % 2 == 1) {
             if (window_width < 768) {
                 css_effect = {left: window_width};
             } else {
@@ -63,7 +63,7 @@ var index_appear = function() {
         var height = $(this).css("height");
         var window_width = $(window).width();
         var animate_effect;
-        if (index % 2 == 0) {
+        if (index % 2 == 1) {
             if (window_width < 768) {
                 animate_effect = {left: 0};
             } else {
@@ -86,7 +86,7 @@ var index_disappear = function(callback) {
         var height = $(this).css("height");
         var window_width = $(window).width();
         var animate_effect;
-        if (index % 2 == 0) {
+        if (index % 2 == 1) {
             if (window_width < 768) {
                 animate_effect = {left: window_width};
             } else {
@@ -105,36 +105,57 @@ var index_disappear = function(callback) {
 };
 
 var enable_archive_click = function() {
-    $(".politics-container").bind("click", function() {
-        var redirect_politics = function() {
-            window.location.href = "archives/politics.html";
-        };
-        index_disappear(redirect_politics);
-    });
-    $(".economics-container").bind("click", function() {
-        var redirect_politics = function() {
-            window.location.href = "archives/economics.html";
-        };
-        index_disappear(redirect_politics);
-    });
-    $(".culture-container").bind("click", function() {
-        var redirect_politics = function() {
-            window.location.href = "archives/culture.html";
-        };
-        index_disappear(redirect_politics);
-    });
-    $(".life-container").bind("click", function() {
-        var redirect_politics = function() {
-            window.location.href = "archives/life.html";
-        };
-        index_disappear(redirect_politics);
-    });
-    $(".korean-container").bind("click", function() {
-        var redirect_politics = function() {
-            window.location.href = "archives/korean.html";
-        };
-        index_disappear(redirect_politics);
-    });
+    if (window.location.href.indexOf("index.html") >= 0) {
+        $(".politics-container").bind("click", function() {
+            var redirect_url = function() {
+                window.location.href = "archives/politics.html";
+            };
+            index_disappear(redirect_url);
+        });
+        $(".economics-container").bind("click", function() {
+            var redirect_url = function() {
+                window.location.href = "archives/economics.html";
+            };
+            index_disappear(redirect_url);
+        });
+        $(".culture-container").bind("click", function() {
+            var redirect_url = function() {
+                window.location.href = "archives/culture.html";
+            };
+            index_disappear(redirect_url);
+        });
+        $(".life-container").bind("click", function() {
+            var redirect_url = function() {
+                window.location.href = "archives/life.html";
+            };
+            index_disappear(redirect_url);
+        });
+        $(".korean-container").bind("click", function() {
+            var redirect_url = function() {
+                window.location.href = "archives/korean.html";
+            };
+            index_disappear(redirect_url);
+        });
+    } else {
+        $(".food-container").bind("click", function() {
+            var redirect_url = function() {
+                window.location.href = "../archives/food.html";
+            };
+            index_disappear(redirect_url);
+        });
+        $(".shopping-container").bind("click", function() {
+            var redirect_politics = function() {
+                window.location.href = "../archives/shopping.html";
+            };
+            index_disappear(redirect_politics);
+        });
+        $(".traffic-container").bind("click", function() {
+            var redirect_url = function() {
+                window.location.href = "../archives/traffic.html";
+            };
+            index_disappear(redirect_url);
+        });
+    }
 };
 
 var disable_archive_click = function() {
