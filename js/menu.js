@@ -26,4 +26,20 @@ $(document).ready(function() {
             $(".menu").addClass("menu-active");
         }
     });
+
+    $(".menu-nav-item-content a").each(function() {
+        var _this = $(this);
+        _this.bind("click", function() {
+            $(".menu-button").trigger("click");
+            if (window.location.href.indexOf(_this.attr("data-href")) >= 0) {
+                return;
+            }
+            setTimeout(function () {
+                $(".slice-nav").animate({"opacity": 0}, "slow");
+                $(".slice-container").animate({"left": -$(window).width()}, "slow", function() {
+                    window.location.href = _this.attr("data-href");
+                });
+            }, 500);
+        });
+    });
 });
