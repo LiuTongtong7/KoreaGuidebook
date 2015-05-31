@@ -11,10 +11,22 @@ var load_images = function(min_millisecond, callback) {
 
     _archive_containers.each(function(index) {
         var height = $(this).css("height");
+        var window_width = $(window).width();
+        var css_effect;
         if (index % 2 == 0) {
-            $(this).css("top", "-"+height);
+            if (window_width < 768) {
+                css_effect = {left: window_width};
+            } else {
+                css_effect = {top: height};
+            }
+            $(this).css(css_effect);
         } else {
-            $(this).css("bottom", "-"+height);
+            if (window_width < 768) {
+                css_effect = {left: window_width};
+            } else {
+                css_effect = {bottom: height};
+            }
+            $(this).css(css_effect);
         }
     });
     _archive_images.each(function() {
@@ -49,10 +61,22 @@ var index_appear = function() {
 
     _archive_containers.each(function(index) {
         var height = $(this).css("height");
+        var window_width = $(window).width();
+        var animate_effect;
         if (index % 2 == 0) {
-            $(this).animate({top: 0}, "slow", remove_loading);
+            if (window_width < 768) {
+                animate_effect = {left: 0};
+            } else {
+                animate_effect = {top: 0};
+            }
+            $(this).animate(animate_effect, "slow", remove_loading);
         } else {
-            $(this).animate({bottom: 0}, "slow", remove_loading);
+            if (window_width < 768) {
+                animate_effect = {left: 0};
+            } else {
+                animate_effect = {bottom: 0};
+            }
+            $(this).animate(animate_effect, "slow", remove_loading);
         }
     });
 };
@@ -60,17 +84,27 @@ var index_appear = function() {
 var index_disappear = function(callback) {
     $(".archive-container").each(function(index) {
         var height = $(this).css("height");
+        var window_width = $(window).width();
+        var animate_effect;
         if (index % 2 == 0) {
-            $(this).animate({top: "-" + height}, "slow", callback);
+            if (window_width < 768) {
+                animate_effect = {left: window_width};
+            } else {
+                animate_effect = {top: height};
+            }
+            $(this).animate(animate_effect, "slow", callback);
         } else {
-            $(this).animate({bottom: "-" + height}, "slow", callback);
+            if (window_width < 768) {
+                animate_effect = {left: window_width};
+            } else {
+                animate_effect = {bottom: height};
+            }
+            $(this).animate(animate_effect, "slow", callback);
         }
     });
 };
 
-$(document).ready(function() {
-    load_images(1000, index_appear);
-
+var enable_archive_click = function() {
     $(".politics-container").bind("click", function() {
         var redirect_politics = function() {
             window.location.href = "archives/politics.html";
@@ -101,4 +135,13 @@ $(document).ready(function() {
         };
         index_disappear(redirect_politics);
     });
+};
+
+var disable_archive_click = function() {
+    $(".archive-container").unbind("click");
+};
+
+$(document).ready(function() {
+    load_images(1000, index_appear);
+    enable_archive_click();
 });
