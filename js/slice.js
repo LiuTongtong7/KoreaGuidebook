@@ -46,6 +46,15 @@ var load_slice_images = function(min_millisecond, callback) {
     $(".slice-nav").css("opacity", 0);
 
     var _slice_images = $(".slice-image");
+    if (_slice_images.length == 0) {
+        var end_time = (new Date()).getTime();
+        if (end_time - start_time > min_millisecond) {
+            callback();
+        } else {
+            setTimeout(callback, min_millisecond-(end_time-start_time));
+        }
+        return;
+    }
     _slice_images.each(function() {
         var _this = $(this);
         var img = new Image();
