@@ -29,6 +29,7 @@ var load_images = function(min_millisecond, callback) {
             $(this).css(css_effect);
         }
     });
+    _archive_containers.css("opacity", 1);
     _archive_images.each(function() {
         var _this = $(this);
         var img = new Image();
