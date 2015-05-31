@@ -5,7 +5,7 @@
 var active_slice = 1;
 
 var set_slice_height = function() {
-    $(".slice-container").css("height", window.innerHeight);
+    $(".slice-container").css("height", $(window).height());
 };
 
 var scroll_to_slice = function() {
@@ -74,10 +74,10 @@ var slice_appear = function() {
 
 $(document).ready(function() {
     set_slice_height();
-    $(window).bind({
-        "resize": set_slice_height,
-        "scroll": scroll_to_slice
-    });
+    $(window).bind("resize", set_slice_height);
+    if ($("html").hasClass("desktop")) {
+        $(window).bind("scroll", scroll_to_slice);
+    }
 
     load_slice_images(1000, slice_appear);
 
