@@ -26,17 +26,15 @@ var load_images = function(min_millisecond, callback) {
             $(this).remove();
             count += 1;
             if (count == _archive_images.length) {
-                return true;
+                var end_time = (new Date()).getTime();
+                if (end_time - start_time > min_millisecond) {
+                    callback();
+                } else {
+                    setTimeout(callback, min_millisecond-(end_time-start_time));
+                }
             }
         })
     });
-
-    var end_time = (new Date()).getTime();
-    if (end_time - start_time > min_millisecond) {
-        callback();
-    } else {
-        setTimeout(callback, min_millisecond-(end_time-start_time));
-    }
 };
 
 var index_appear = function() {

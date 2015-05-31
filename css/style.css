@@ -5,6 +5,7 @@ body {
 
 * {
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
 }
 
 /*Index.html*/
@@ -216,8 +217,104 @@ html.desktop .archive-button {
     }
 }
 
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 50;
+    width: 270px;
+    height: 100%;
+    padding: 0 30px;
+    background-color: #121212;
+    color: #ffffff;
+    -webkit-transform: translate3d(270px,0,0);
+    transform: translate3d(270px,0,0);
+    -webkit-transition: -webkit-transform .5s cubic-bezier(.5,0,.25,1);
+    transition: transform .5s cubic-bezier(.5,0,.25,1);
+}
+.menu.menu-active {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+.archives.archives-inactive {
+    -webkit-transform: translate3d(-270px,0,0);
+    transform: translate3d(-270px,0,0);
+    /*-webkit-filter: blur(10px);*/
+    /*filter: blur(10px);*/
+}
+
+.menu-button {
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    background-color: #121212;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.menu-button .menu-line {
+    position: relative;
+    top: calc(50% - 1px);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    -webkit-transition: -webkit-transform .5s cubic-bezier(.5,0,.25,1),background-color .5s cubic-bezier(.5,0,.25,1);
+    transition: transform .5s cubic-bezier(.5,0,.25,1),background-color .5s cubic-bezier(.5,0,.25,1);
+}
+.menu-button .menu-line:before,
+.menu-button .menu-line:after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 100%;
+    height: inherit;
+    background-color: #ffffff;
+    -webkit-transition: -webkit-transform .5s cubic-bezier(.5,0,.25,1),top .5s cubic-bezier(.5,0,.25,1),bottom .5s cubic-bezier(.5,0,.25,1);
+    transition: transform .5s cubic-bezier(.5,0,.25,1),top .5s cubic-bezier(.5,0,.25,1),bottom .5s cubic-bezier(.5,0,.25,1);
+}
+.menu-button .menu-line:before {
+    top: -8px;
+}
+.menu-button .menu-line:after {
+    bottom: -8px;
+}
+.menu-button:hover .menu-line:before {
+    -webkit-transform: translate3d(0,-150%,0);
+    transform: translate3d(0,-150%,0);
+}
+.menu-button:hover .menu-line:after {
+    -webkit-transform: translate3d(0,150%,0);
+    transform: translate3d(0,150%,0);
+}
+
+.menu-active .menu-button:hover .menu-line,
+.menu-active .menu-line {
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    background-color: transparent;
+}
+.menu-active .menu-button:hover .menu-line:before,
+.menu-active .menu-line:before {
+    top: 0;
+    -webkit-transform: rotate(45deg) translate3d(0,0,0);
+    transform: rotate(45deg) translate3d(0,0,0)
+}
+.menu-active .menu-button:hover .menu-line:after,
+.menu-active .menu-line:after {
+    bottom: 0;
+    -webkit-transform: rotate(-45deg) translate3d(0,0,0);
+    transform: rotate(-45deg) translate3d(0,0,0)
+}
+
 /*Korean.html*/
 .slices {
+    position: relative;
     overflow: hidden;
 }
 
@@ -228,21 +325,22 @@ html.desktop .archive-button {
 }
 
 /*需要根据每张图的情况修改*/
-.slice-container .hero {
+.slice-container .slice-image {
     position: absolute;
     top: 50%;
     right: 0;
     z-index: 1000;
     height: 75%;
     width: 100%;
-    background: left center url(../img/iphone.png) no-repeat;
+    background-position: left center;
+    background-repeat: no-repeat;
     background-size: contain;
     -webkit-transform: translateY(-50%) translateX(45%);
     -ms-transform: translateY(-50%) translateX(45%);
     transform: translateY(-50%) translateX(45%);
 }
 
-.slice-container .inner {
+.slice-container .slice-text-container {
     position: relative;
     height: 100%;
     overflow: hidden;
@@ -251,12 +349,12 @@ html.desktop .archive-button {
     max-width: 1280px;
 }
 @media (min-width: 768px) {
-    .inner {
+    .slice-text-container {
         padding: 0 60px;
     }
 }
 
-.slice-container .content {
+.slice-container .slice-text {
     position: absolute;
     top: 50%;
     width: 50%;
@@ -274,7 +372,7 @@ html.desktop .archive-button {
         transform-style: preserve-3d;
     }
 
-    .slice-container .hero {
+    .slice-container .slice-image {
         position: static;
         margin: 0 0;
         width: auto;
@@ -285,10 +383,10 @@ html.desktop .archive-button {
         transform: none;
     }
 
-    .slice-container .inner {
+    .slice-container .slice-text-container {
         height: auto;
     }
-    .slice-container .content {
+    .slice-container .slice-text {
         position: static;
         margin: 0 0 5rem 0;
         width: auto;
