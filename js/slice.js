@@ -30,7 +30,7 @@ var switch_slice = function(index) {
         scrollTop: $(".slice-container:nth-child("+active_slice+")").offset().top
     }, 700, function() {
         switch_count -= 1;
-        if (switch_count == 0) {
+        if ($("html").hasClass("desktop") && switch_count == 0) {
             $(window).bind("scroll", scroll_to_slice);
         }
     });
