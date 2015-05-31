@@ -11,7 +11,7 @@ var set_slice_height = function() {
 var scroll_to_slice = function() {
     var current_offset = $(window).scrollTop();
     var origin_offset = $(".slice-container:nth-child("+active_slice+")").offset().top;
-    var max_offset = 50;
+    var max_offset = 10;
     if (current_offset - origin_offset < -max_offset) {
         switch_slice(active_slice - 1);
     } else if (current_offset - origin_offset > max_offset) {
@@ -28,7 +28,7 @@ var switch_slice = function(index) {
     switch_count += 1;
     $("body").animate({
         scrollTop: $(".slice-container:nth-child("+active_slice+")").offset().top
-    }, 1000, function() {
+    }, 700, function() {
         switch_count -= 1;
         if (switch_count == 0) {
             $(window).bind("scroll", scroll_to_slice);
