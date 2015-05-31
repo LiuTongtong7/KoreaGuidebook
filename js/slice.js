@@ -5,7 +5,7 @@
 var active_slice = 1;
 
 var set_slice_height = function() {
-    $(".slice-container").css("height", $(window).height());
+    $(".slice-container").css("height", window.innerHeight);
 };
 
 var scroll_to_slice = function() {
