@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+    font-family: HelveticaNeue, Helvetica, Arial, "Hiragino Sans GB", sans-serif;
 }
 
 body {
@@ -230,7 +231,7 @@ html.desktop .archive-button {
     z-index: 50;
     width: 270px;
     height: 100%;
-    padding: 30px;
+    padding: 15px 25px;
     background-color: #121212;
     color: #ffffff;
     -webkit-transform: translate3d(270px,0,0);
@@ -325,6 +326,21 @@ html.desktop .archive-button {
     transform: rotate(-45deg) translate3d(0,0,0)
 }
 
+.menu-content h2 {
+    margin-bottom: 0;
+}
+.menu-content li {
+    margin: 10px;
+}
+
+#about-us {
+    display: block;
+    float: right;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3em;
+}
+
 .menu-nav {
     position: absolute;
     top: 0;
@@ -402,7 +418,7 @@ html.desktop .archive-button {
 .slice-container {
     position: relative;
     height: 100%;
-    padding: 120px 0 80px;
+    padding: 60px 0;
 }
 
 /*需要根据每张图的情况修改*/
@@ -444,6 +460,11 @@ html.desktop .archive-button {
     transform: translateY(-50%);
 }
 
+.slice-container .slice-text p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
 @media (max-width: 767px) {
     .slice-container {
         padding: 50px 0;
@@ -475,7 +496,7 @@ html.desktop .archive-button {
         -ms-transform: none;
         transform: none;
     }
-    .slice-container h1 {
+    .slice-container h2 {
         text-align: center;
     }
 }
@@ -534,4 +555,23 @@ html.desktop .archive-button {
     .slice-nav {
         display: none;
     }
+}
+
+.about-us-slice-container {
+    background-color: #fff;
+    color: #000;
+}
+.about-us-slice-container .grid-horizontal-line,
+.about-us-slice-container .grid-vertical-line {
+    position: fixed;
+    display: block;
+    background-color: #eee4da;
+}
+.about-us-slice-container .grid-horizontal-line {
+    height: 2px;
+    width: 100%;
+}
+.about-us-slice-container .grid-vertical-line {
+    width: 2px;
+    height: 100%;
 }

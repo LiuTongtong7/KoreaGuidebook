@@ -27,6 +27,16 @@ $(document).ready(function() {
         }
     });
 
+    $("#about-us").bind("click", function() {
+        $(".menu-button").trigger("click");
+        setTimeout(function () {
+            var redirect_url = function() {
+                window.location.href = $("#about-us").attr("data-href");
+            };
+            index_disappear(redirect_url);
+        }, 500);
+    });
+
     $(".menu-nav-item-content a").each(function() {
         var _this = $(this);
         _this.bind("click", function() {
