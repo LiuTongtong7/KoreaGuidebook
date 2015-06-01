@@ -54,9 +54,9 @@ var index_appear = function() {
     var count = 0;
     var remove_loading = function() {
         count += 1;
-        //if (count == _archive_containers.length) {
-        //    $(".archive-loading").remove();
-        //}
+        if (count == _archive_containers.length) {
+            $(".archive-loading").css("opacity", 0);
+        }
     };
 
     _archive_containers.each(function(index) {
@@ -86,6 +86,7 @@ var index_disappear = function(callback) {
         var height = $(this).css("height");
         var window_width = $(window).width();
         var animate_effect;
+        $(".archive-loading").css("opacity", 1);
         if (index % 2 == 1) {
             if (window_width < 768) {
                 animate_effect = {left: window_width};
