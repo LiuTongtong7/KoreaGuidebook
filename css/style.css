@@ -26,12 +26,13 @@ body {
     clear: both;
 }
 
-.archive-loading {
-    position: absolute;
+.archive-loading,
+.slice-loading {
+    position: fixed;
     left: 0;
     z-index: 0;
-    background-image: url(../img/logo/logo.png);
-    background-size: 50%;
+    background-image: url(../img/logo/logo.svg);
+    background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
     width: 100%;
@@ -401,18 +402,6 @@ html.desktop .archive-button {
     overflow: hidden;
     -webkit-transition: -webkit-transform .5s cubic-bezier(.5,0,.25,1),-webkit-filter 1s cubic-bezier(.5,0,.25,1),-webkit-transform .5s cubic-bezier(.5,0,.25,1),filter 1s cubic-bezier(.5,0,.25,1);
     transition: transform .5s cubic-bezier(.5,0,.25,1),filter 1s cubic-bezier(.5,0,.25,1);
-}
-
-.slice-loading {
-    position: fixed;
-    left: 0;
-    z-index: 0;
-    background-image: url(../img/logo/logo.png);
-    background-size: 50%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
 }
 
 .slice-container {
