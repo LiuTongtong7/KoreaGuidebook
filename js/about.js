@@ -2,7 +2,7 @@
  * Created by maoyilin, liutongtong on 6/1/15.
  */
 
-var about_image_url = ["img/about/1.jpg", "img/about/2.jpg", "img/about/3.jpg", "img/about/4.jpg", "img/about/5.jpg"];
+var about_image_url = ["img/about/0.jpg", "img/about/1.jpg", "img/about/2.jpg", "img/about/3.jpg", "img/about/4.jpg"];
 var about_images = [];
 var order = [];
 var next_container = 0;
