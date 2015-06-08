@@ -63,6 +63,7 @@ var index_appear = function() {
         var height = $(this).css("height");
         var window_width = $(window).width();
         var animate_effect;
+        _archive_containers.css("opacity", 1);
         if (index % 2 == 1) {
             if (window_width < 768) {
                 animate_effect = {left: 0};
